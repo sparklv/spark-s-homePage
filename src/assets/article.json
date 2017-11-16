@@ -1,38 +1,65 @@
 [
     {
-        "url":"es6.md",
-        "name":"es6",
-        "type":"JavaScript",
-        "descript":"es6学习"
+        "url": "sass.md",
+        "name": "sass",
+        "type": "CSS",
+        "descript": "SASS是一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。",
+        "date": "2017-11-13"
     },
     {
-        "url":"git-note.md",
-        "name":"git-note",
-        "type":"Computer",        
-        "descript":"git学习"
+        "url": "设置百分数相对性问题.md",
+        "name": "设置百分数相对性问题",
+        "type": "CSS",
+        "descript": "对一个子元素css属性设置了百分数，可是有时不会生效，这里面涉及一个相对性的问题。",
+        "date": "2017-11-14"
     },
     {
-        "url":"http-note.md",
-        "name":"http-note",
-        "type":"Computer",                
-        "descript":"http学习"
+        "url": "Javascript.md",
+        "name": "Javascript",
+        "type": "JavaScript",
+        "descript": "js是前端的基础，是所有框架的基础，学好，js是重中之重",
+        "date": "2017-11-12"
     },
     {
-        "url":"Javascript.md",
-        "name":"Javascript",
-        "type":"JavaScript",        
-        "descript":"js学习"
+        "url": "es6.md",
+        "name": "es6",
+        "type": "JavaScript",
+        "descript": "ECMAScript 6 在接下来的一段时间内将成为 ECMAScript的一个标准。不管在Github,还是在很多社区，javascript爱好者已经早已开始拥抱变化，享受ES6 带来的美好,这篇文章将介绍ES6的一些新特性。",
+        "date": "2017-11-11"
     },
     {
-        "url":"mui-note.md",
-        "name":"mui-note",
-        "type":"Framework",
-        "descript":"mui学习"
+        "url": "javascript面向对象（原型、继承）.md",
+        "name": "javascript面向对象（原型、继承）",
+        "type": "JavaScript",
+        "descript": "这段时间再找工作，以前学习的js基础记忆有些模糊，特别是继承这块，几种继承方法的实现、以及优缺点总是记不住，恰好现在比较有时间，就来全面的整理一下js面向对象方面的知识",
+        "date": "2017-11-13"
     },
     {
-        "url":"sass.md",
-        "name":"sass",
-        "type":"CSS",
-        "descript":"sass学习"
+        "url": "webpack+babel常见问题.md",
+        "name": "webpack+babel常见问题",
+        "type": "Framework",
+        "descript": "学习webpack打包的时候，在babel上踩了几个坑，领导又要兼容IE，所以在这里写一下吧",
+        "date": "2017-11-14"
+    },
+    {
+        "url": "webpack 配置热更新.md",
+        "name": "webpack 配置热更新",
+        "type": "Framework",
+        "descript": "webpack 配置热更新",
+        "date": "2017-11-11"
+    },
+    {
+        "url": "git-note.md",
+        "name": "git-note",
+        "type": "Others",
+        "descript": "Git是目前世界上最先进的分布式版本控制系统（没有之一）",
+        "date": "2017-11-12"
+    },
+    {
+        "url": "http-note.md",
+        "name": "http-note",
+        "type": "Others",
+        "descript": "超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。",
+        "date": "2017-11-11"
     }
 ]

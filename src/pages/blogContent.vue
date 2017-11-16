@@ -42,12 +42,17 @@ export default {
 
 <style scoped>
 section {
-  width: 80%;
+  width: 90%;
   text-align: left;
   background-color: #fff;
   overflow: auto;
 }
 .markdown {
   padding: 30px;
+}
+@media screen and (max-width: 768px) {
+  section{
+    width:100%;
+  }
 }
 </style>

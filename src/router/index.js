@@ -4,9 +4,17 @@ import Intro from '@/pages/Intro'
 import blogHome from '@/pages/blogHome'
 import blogContent from '@/pages/blogContent'
 import blogCatalog from '@/pages/blogCatalog'
+import aboutMe from '@/pages/aboutMe'
+import about1 from '@/pages/about1'
+import about2 from '@/pages/about2'
+import about3 from '@/pages/about3'
+import about4 from '@/pages/about4'
+import about5 from '@/pages/about5'
+import about6 from '@/pages/about6'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -19,7 +27,7 @@ export default new Router({
       children: [
         {
           path: '/',
-          redirect:'/blogCatalog'
+          redirect: '/blogCatalog'
         },
         {
           path: '/blogContent',
@@ -28,6 +36,33 @@ export default new Router({
         {
           path: '/blogCatalog',
           component: blogCatalog
+        }
+      ]
+    },
+    {
+      path: '/aboutMe',
+      component: aboutMe,
+      redirect: '/about1',
+      children: [
+        {
+          path: '/about1',
+          component: about1
+        },
+        {
+          path: '/about2',
+          component: about2
+        }, {
+          path: '/about3',
+          component: about3
+        }, {
+          path: '/about4',
+          component: about4
+        }, {
+          path: '/about5',
+          component: about5
+        }, {
+          path: '/about6',
+          component: about6
         }
       ]
     }

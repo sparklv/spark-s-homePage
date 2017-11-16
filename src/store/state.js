@@ -1,5 +1,6 @@
 const state = {
     nowContent: {},
-    articleList:[]
+    articleList: [],
+    sport: true
 }
 export default state

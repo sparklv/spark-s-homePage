@@ -28,4 +28,19 @@ body {
 h1 {
   font-size: 36px;
 }
+.el-submenu__title i {
+  color: #fff;
+}
+.el-collapse-item__header{
+  background-color:rgb(13,55,138) !important;
+  color:#fff !important;
+  padding-left:10px !important;
+}
+.el-collapse-item__content{
+  padding:10px !important;
+}
+ul{
+  list-style: none;
+  text-align: left;
+}
 </style>

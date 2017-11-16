@@ -4,6 +4,9 @@ const mutations = {
     },
     changeList(state, val) {
         state.articleList = val;
+    },
+    changeSport(state, val) {
+        state.sport = val;
     }
 }
 export default mutations

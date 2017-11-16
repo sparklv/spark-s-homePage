@@ -1,9 +1,11 @@
 <template>
     <section :class="{box:true,animated:true,slideInUp:inUp}" @mouseover="mHover" @mouseout="mOut">
-        <h2>{{name}}</h2>
-        <h4>{{descript}}</h4>
-        <span style="float:left;"></span>
-        <el-button type="primary" style="float:right;margin-right:20px;;margin-bottom:20px;" @click="gotoPage()">阅读文章</el-button>
+        <h2 style="color:rgb(57, 114, 160)">{{name}}</h2>
+        <div class="descript">{{descript}}</div>
+        <div style="float:left;margin-top:10px;">
+          <el-tag>{{content.date}}</el-tag>
+        </div>
+        <el-button type="primary" style="float:right;margin-right:20px;;margin-bottom:20px;margin-top:5px;" @click="gotoPage()">阅读文章</el-button>
     </section>
 </template>
 
@@ -38,15 +40,25 @@ export default {
 
 <style scoped>
 .box {
-  width: 70%;
+  width: 80%;
   margin-top: 30px;
   border-radius: 5px;
   border-left: 4px solid rgb(57, 114, 160);
-  padding-left: 20px;
+  padding: 10px;
   background-color: #fff;
+  overflow: auto;
 }
 .box:hover {
   transform: translateY(-10px);
   box-shadow: 3px 3px #ccc;
+}
+.box > h2,
+.descript {
+  width: 96%;
+}
+@media screen and (max-width: 768px) {
+  .box {
+    width: 96%;
+  }
 }
 </style>

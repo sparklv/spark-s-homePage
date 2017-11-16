@@ -1,4 +1,5 @@
 # git：分布式版本控制系统
+<hr>
 
 与集中式版本控制系统相比，分布式没用中央服务器，每个人电脑上都是一个完整的版本库。而集中式控制系统需要联网，需要中央服务器。此外git有强大的分支管理。
 
@@ -229,34 +230,48 @@ git stash pop
 
 回复现场并删除stash内容
 
-`git stash apply stash@{0}`
+```javascript
+git stash apply stash@{0}
+```
 
 恢复指定现场
 
 ### 多人协作
 
-`git remote`
+```javascript
+git remote
+```
 
 查看远程库信息
 
 更详细
 
-`git remote -v`
+```javascript
+git remote -v
+```
 
 克隆后克隆分支
 
-`git checkout -b dev origin/dev`
+```javascript
+git checkout -b dev origin/dev
+```
 
 推送分支
 
-`git push origin dev`
+```javascript
+git push origin dev
+```
 
 冲突后使用
 
-`git pull`把最新提交从`origin/dev`抓下来
+```javascript
+git pull 把最新提交从origin/dev 抓下来
+```
 
 如果pull失败
 
-`git branch --set-upstream dev origin/dev`
+```javascript
+git branch --set-upstream dev origin/dev
+```
 
 然后再pull
