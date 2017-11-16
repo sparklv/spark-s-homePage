@@ -29,7 +29,7 @@
     </el-header>
     <el-container>
       <el-dialog :visible.sync="dialogVisible">
-        <img class="wechat" src="../assets/wechat.jpg" alt="wechat">
+        <img class="wechat" src="http://ozgnrqjtt.bkt.clouddn.com/wechat.jpg" alt="wechat">
         <div>awesomebin</div>
     </el-dialog>
       <el-aside width="240px">
@@ -128,10 +128,10 @@
             <a href="https://sparklv.github.io">我的主页</a>
           </div>
           <div style="margin-top:10px;">
-            <a href="https://sparklv.github.io/aboutMe">个人简介</a>
+            <a href="https://sparklv.github.io/#/aboutMe">个人简介</a>
           </div>
           <div style="margin-top:10px;">
-            <a href="https://sparklv.github.io/blogCatalog">我的博客</a>
+            <a href="https://sparklv.github.io/#/blogCatalog">我的博客</a>
           </div>
           <div style="margin-top:10px;">
             <a href="https://github.com/SparkLv">github</a>

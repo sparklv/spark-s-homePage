@@ -2,9 +2,9 @@
   <section class="animated">
     <h2 style="margin:10px;margin-left:100px;text-decoration:underline;color:#fff">自我介绍 ></h2>
     <div style="width:100%;text-align:center;">
-       <img class="img1" src="../assets/lifeme.jpg" width="250" height="250"alt="lifeme" style="border:3px solid #ccc;">
-      <img class="img2" src="../assets/me2.jpg" width="256" height="192"alt="me2" style="margin-left:10%;border:3px solid #ccc;">
-      <img class="img3" src="../assets/me3.jpg" width="216" height="288" alt="me3" style="margin-left:10%;border:3px solid #ccc;">
+       <img class="img1" src="http://ozgnrqjtt.bkt.clouddn.com/lifeme.jpg" width="250" height="250"alt="lifeme" style="border:3px solid #ccc;">
+      <img class="img2" src="http://ozgnrqjtt.bkt.clouddn.com/me2.jpg" width="250" height="250"alt="me2" style="margin-left:10%;border:3px solid #ccc;">
+      <img class="img3" src="http://ozgnrqjtt.bkt.clouddn.com/me3.jpg" width="216" height="288" alt="me3" style="margin-left:10%;border:3px solid #ccc;">
       <div style="clear:both;"></div>
     </div>
     <div style="width:100%;text-align:center;margin-top:30px;">
@@ -83,13 +83,35 @@ li {
 a {
   color: #fff;
 }
+@keyframes buling {
+  from{
+    opacity: 0.5;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes buling2 {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
 .img1{
-  transform:rotate(-20deg)
+  transform:rotate(-20deg);
+  animation: buling 1s infinite;
+  animation-direction:alternate;
 }
 .img2{
-  transform:rotate(20deg)
+  transform:rotate(20deg);
+  animation: buling 1s infinite;
+  animation-direction:alternate;  
 }
 .img3{
-  transform: rotate(-10deg)
+  transform: rotate(-10deg);
+  animation: buling 1s infinite;
+  animation-direction:alternate;  
 }
 </style>

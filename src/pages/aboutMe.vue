@@ -11,7 +11,7 @@
       </el-steps>
     </div>
     <router-view></router-view>
-    <img src="../assets/op_tips.png" alt="" style="position:fixed;bottom:20px;right:20px;">
+    <img src="http://ozgnrqjtt.bkt.clouddn.com/op_tips.png" alt="" style="position:fixed;bottom:20px;right:20px;">
   </section>
 </template>
 

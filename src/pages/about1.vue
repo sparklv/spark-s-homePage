@@ -1,9 +1,9 @@
 <template>
   <section :class="{animated:true,fadeOut:pageout}">
-      <img class="homeme" src="../assets/homeme.jpg" alt="me" width="200" height="200">
+      <img class="homeme" src="http://ozgnrqjtt.bkt.clouddn.com/homeme.jpg" alt="me" width="200" height="200">
       <h1>吕文彬</h1>
       <div style="margin-top:20px;">sparklv@outlook.com</div>
-      <h1 class="animated rollIn">Welcome to watch !</h1>
+      <h1 class="animated fadeInUp">Welcome to watch !</h1>
   </section>
 </template>
 

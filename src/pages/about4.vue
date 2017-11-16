@@ -1,7 +1,7 @@
 <template>
     <section class="animated">
         <h2 style="float:left;margin-left:100px;text-decoration:underline;color:#fff">我的经历 ></h2>
-        <img class="me" src="../assets/me.jpg" alt="me" width="100" height="150">
+        <img class="me" src="http://ozgnrqjtt.bkt.clouddn.com/me.jpg" alt="me" width="100" height="150">
         <div class="detail">
             <hr>
         </div>
@@ -74,7 +74,7 @@ section {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: #d15fee;
+  background-color: #CD69C9;
   overflow: hidden;
 }
 li {
@@ -82,19 +82,19 @@ li {
 }
 @keyframes move {
   20% {
-    left: 15%;
+    left: 12%;
   }
   40% {
-    left: 33%;
+    left: 30%;
   }
   60% {
-    left: 51%;
+    left: 48%;
   }
   80% {
-    left: 69%;
+    left: 66%;
   }
   100% {
-    left: 87%;
+    left: 84%;
   }
 }
 @keyframes move2 {
@@ -139,7 +139,7 @@ li {
 }
 .page1 {
   position: absolute;
-  left: 9%;
+  left: 6%;
   width: 100%;
   top: 30%;
   animation: pagemove 2s;
@@ -147,7 +147,7 @@ li {
 }
 .page2 {
   position: absolute;
-  left: 27%;
+  left: 24%;
   width: 100%;
   opacity: 0;
   animation: pagemove 2s;
@@ -156,7 +156,7 @@ li {
 }
 .page3 {
   position: absolute;
-  left: 45%;
+  left: 42%;
   width: 100%;
   opacity: 0;
   animation: pagemove 2s;
@@ -165,7 +165,7 @@ li {
 }
 .page4 {
   position: absolute;
-  left: 63%;
+  left: 60%;
   width: 100%;
   opacity: 0;
   animation: pagemove 2s;
@@ -174,7 +174,7 @@ li {
 }
 .page5 {
   position: absolute;
-  left: 81%;
+  left: 78%;
   width: 100%;
   opacity: 0;
   animation: pagemove 2s;
