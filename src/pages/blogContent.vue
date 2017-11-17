@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 section {
-  width: 90%;
+  width: 95%;
   text-align: left;
   background-color: #fff;
   overflow: auto;

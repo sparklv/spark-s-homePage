@@ -1,29 +1,29 @@
 <template>
   <el-container>
     <el-header>
-      <h1 style="color:#fff">
+      <h1 style="color:#ccc">
         吕文彬的个人博客
         <br>
         Spark's Blog!
       </h1>
-      <div style="color:#fff;float:left;margin-left:1%;">
+      <div style="color:#ccc;float:left;margin-left:1%;">
         <div style="font-size:16px;word-spacing:10px;">
           ContactMe:
           <a href="#">
-            <i class="iconfont icon-weixin" style="font-size:30px;" @click="dialogVisible = true"></i>            
+            <i class="iconfont icon-weixin" style="color:#ccc;font-size:30px;" @click="dialogVisible = true"></i>            
           </a>
           <a href="https://weibo.com/u/3845909848">
-            <i class="iconfont icon-weibo" style="font-size:30px;"></i>            
+            <i class="iconfont icon-weibo" style="color:#ccc;font-size:30px;"></i>            
           </a>
           <a href="https://github.com/SparkLv">
-            <i class="iconfont icon-github1" style="font-size:30px;"></i>            
+            <i class="iconfont icon-github1" style="color:#ccc;font-size:30px;"></i>            
           </a>
           <a href="mailto:sparklv@outlook.com">
-            <i class="iconfont icon-youjian" style="font-size:30px;"></i>             
+            <i class="iconfont icon-youjian" style="color:#ccc;font-size:30px;"></i>             
           </a>
         </div>                       
       </div>
-      <div class="today" style="color:#fff;float:right;margin-right:1%;">
+      <div class="today" style="color:#ccc;float:right;margin-right:1%;">
         今天是{{today.year}}年{{today.month}}月{{today.day}}日 {{today.week}}
       </div>
     </el-header>
@@ -76,6 +76,10 @@
         <span slot="title">Free</span>
       </el-menu-item>
     </el-menu>
+    <!-- <div style="margin-top:30px;padding-top:20px;border-top:0.5px solid #ccc">
+      推荐文章
+      <recommend v-for="item in recommendList" :content="item" :key="item.name"></recommend>
+    </div> -->
     </el-aside>
       <el-container>
       <el-main>
@@ -148,6 +152,8 @@
 <script>
 import articleList from "@/assets/article.json";
 import articleBar from "@/components/articleBar";
+import recommendList from "@/assets/recommend.json";
+import recommend from "@/components/recommend";
 export default {
   name: "blogHome",
   data() {
@@ -155,7 +161,8 @@ export default {
       showList: [],
       topshow: false,
       today: {},
-      dialogVisible: false
+      dialogVisible: false,
+      recommendList
     };
   },
   created() {
@@ -214,7 +221,8 @@ export default {
     };
   },
   components: {
-    articleBar
+    articleBar,
+    recommend
   },
   methods: {
     filterCatalog(event) {
@@ -276,8 +284,8 @@ a {
   height: 220px !important;
   width: 100%;
   z-index: 1;
-  background: url("http://ozgnrqjtt.bkt.clouddn.com/title-background.jpg")
-    no-repeat 100% 100%;
+  background: url("http://ozgnrqjtt.bkt.clouddn.com/4bc967a17c8c2e865efc1d8ad96cf1e1.jpg")
+    no-repeat 50% 50%;
 }
 .el-footer {
   background-color: #333;
@@ -330,7 +338,7 @@ a {
 .el-main {
   margin-top: 20px;
   margin-left: 5%;
-  width: 80%;
+  width: 90%;
   overflow: auto;
   color: #333;
   text-align: left;
@@ -375,7 +383,8 @@ li {
     width: 80% !important;
   }
   .el-main {
-    margin-left: 10%;
+    width:96%;
+    margin-left: 2%;
   }
   .el-header {
     line-height: 40px;
