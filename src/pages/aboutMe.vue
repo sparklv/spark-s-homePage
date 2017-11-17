@@ -10,8 +10,12 @@
         <el-step></el-step>      
       </el-steps>
     </div>
+    <audio id="music" src="http://ozgnrqjtt.bkt.clouddn.com/Owl%20City%20-%20The%20Saltwater%20Room.mp3" 
+    autoplay="autoplay" style="position:absolute;top:10px;">
+    </audio>
+    <img id="musicc" src="http://ozgnrqjtt.bkt.clouddn.com/music.png" @click="stopMusic()" alt="music">    
     <router-view></router-view>
-    <img src="http://ozgnrqjtt.bkt.clouddn.com/op_tips.png" alt="" style="position:fixed;bottom:20px;right:20px;">
+    <img src="http://ozgnrqjtt.bkt.clouddn.com/op_tips.png" alt="opt" style="position:fixed;bottom:20px;right:20px;">
   </section>
 </template>
 
@@ -20,7 +24,8 @@ export default {
   name: "blogHome",
   data() {
     return {
-      nowPage: 1
+      nowPage: 1,
+      musicPlay:true
     };
   },
   mounted() {
@@ -75,7 +80,19 @@ export default {
     window.onkeydown = null;
   },
   components: {},
-  methods: {}
+  methods: {
+    stopMusic() {
+      let music = document.getElementById("music");
+      if(this.musicPlay){
+        music.pause();
+        this.musicPlay = false;
+      }
+      else{
+        music.play();
+        this.musicPlay = true;        
+      }
+    }
+  }
 };
 </script>
 
@@ -89,5 +106,24 @@ export default {
   width: 100%;
   bottom: 10%;
   z-index: 1;
+}
+@keyframes ro {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#musicc {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+  animation: ro 5s infinite;
+  animation-timing-function: linear;
+  cursor: pointer;
 }
 </style>

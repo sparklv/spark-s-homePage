@@ -127,7 +127,7 @@ li {
 .me {
   position: absolute;
   left: 0;
-  top: 5%;
+  top: 10%;
   animation: move 6s;
   animation-fill-mode: forwards;
 }

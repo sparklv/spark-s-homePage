@@ -2,7 +2,7 @@
   <section class="animated">
         <h2 style="float:left;margin-left:100px;text-decoration:underline;color:#fff">项目经验 ></h2>
         <div style="margin-top:7%;">
-            <div class="pro-img">
+          <div class="pro-img">
             <a  href="#"><img src="http://ozgnrqjtt.bkt.clouddn.com/pro1.png" alt="pro1"></a>
             <div class="protext">
                 <h4>波导人脸识别项目</h4>
@@ -11,7 +11,7 @@
                 利用babel、babel-polyfill、postcss实现IE和主流浏览器的兼容。
                 制作登陆界面。
             </div>
-        </div>
+          </div>
         <div class="pro-img">
             <a  href="#"><img src="http://ozgnrqjtt.bkt.clouddn.com/pro2.png" alt="pro2"></a>
             <div class="protext">
@@ -90,12 +90,12 @@ section {
 .pro-img:nth-child(3) {
   animation: show1 1s;
   animation-fill-mode: forwards;
-  animation-delay: 2s;  
+  animation-delay: 2s;
 }
 .pro-img:nth-child(4) {
   animation: show1 1s;
   animation-fill-mode: forwards;
-  animation-delay: 3s;  
+  animation-delay: 3s;
 }
 img {
   border-radius: 50%;
