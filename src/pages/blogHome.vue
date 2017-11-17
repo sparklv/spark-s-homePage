@@ -1,6 +1,6 @@
 <template>
-  <el-container>
-    <el-header>
+  <div class="container1">
+    <div class="header1">
       <h1 style="color:#ccc">
         吕文彬的个人博客
         <br>
@@ -26,13 +26,13 @@
       <div class="today" style="color:#ccc;float:right;margin-right:1%;">
         今天是{{today.year}}年{{today.month}}月{{today.day}}日 {{today.week}}
       </div>
-    </el-header>
-    <el-container>
+    </div>
+    <div class="container2">
       <el-dialog :visible.sync="dialogVisible">
         <img class="wechat" src="http://ozgnrqjtt.bkt.clouddn.com/wechat.jpg" alt="wechat">
         <div>awesomebin</div>
     </el-dialog>
-      <el-aside width="240px">
+      <div class="aside1">
         <div style="color:#fff;padding:20px 0;font-size:20px;border-bottom:0.5px solid #ccc">
           文章分类
           <br>
@@ -80,15 +80,15 @@
       推荐文章
       <recommend v-for="item in recommendList" :content="item" :key="item.name"></recommend>
     </div> -->
-    </el-aside>
-      <el-container>
-      <el-main>
+    </div>
+      <div class="container3">
+      <div class="main1">
         <router-view/>
         <i :class="{iconfont:true,'icon-arrow-circle-o-top':true,animated:true,fadeOut:!topshow,fadeIn:topshow}" @click="toTop()"></i>
-      </el-main>
-      </el-container>
-    </el-container>
-    <footer class="el-footer">
+      </div>
+      </div>
+    </div>
+    <div class="footer1">
        <h4>快速链接</h4>
       <div class="footer-link">
         <div style="margin-top:10px;">
@@ -127,7 +127,7 @@
             <a href="http://caibaojian.com/a-programmer/">程序员自我学习</a>
           </div>
         </div>
-        <div style="margin-right:50px;margin-top:10px;">
+        <div style="margin-right:60px;margin-top:10px;">
           <div style="margin-top:10px;">
             <a href="https://sparklv.github.io">我的主页</a>
           </div>
@@ -145,8 +145,8 @@
       <div style="width:100%;text-align:center;margin-top:30px;">
         <span>本站原创内容转载请注明来源,如有问题请发邮件：<a href="mailto:parklv@outlook.com">sparklv@outlook.com</a></span>        
       </div>
-    </footer>
-</el-container>
+    </div>
+</div>
 </template>
 
 <script>
@@ -276,7 +276,15 @@ a {
   text-decoration: none;
   color: #fff;
 }
-.el-header {
+.container1 {
+  display: flex;
+  flex-direction: column;
+}
+.container2 {
+  display: flex;
+  flex-direction: row;
+}
+.header1 {
   background-color: #417eb7;
   color: #333;
   text-align: center;
@@ -287,13 +295,14 @@ a {
   background: url("http://ozgnrqjtt.bkt.clouddn.com/4bc967a17c8c2e865efc1d8ad96cf1e1.jpg")
     no-repeat 50% 50%;
 }
-.el-footer {
+.footer1 {
   background-color: #333;
   color: #fff;
   text-align: left;
   margin-top: 50px;
 }
-.el-aside {
+.aside1 {
+  width: 260px;
   margin-top: 20px;
   margin-left: 10%;
   text-align: center;
@@ -335,14 +344,17 @@ a {
   );
 }
 
-.el-main {
+.main1 {
   margin-top: 20px;
   margin-left: 5%;
   width: 90%;
-  overflow: auto;
+  overflow: visible;
   color: #333;
   text-align: left;
   padding: 0;
+}
+.container3 {
+  flex: 1;
 }
 .icon-arrow-circle-o-top {
   position: fixed;
@@ -368,25 +380,25 @@ li {
   flex-direction: row;
   justify-content: space-between;
 }
-.el-aside i {
+.aside1 i {
   font-size: 20px;
   color: #fff;
 }
-.el-aside .el-menu-item.is-active i {
+.aside1 .el-menu-item.is-active i {
   color: #ffa500;
 }
 @media screen and (max-width: 768px) {
-  .el-container {
+  .container2 {
     flex-direction: column;
   }
-  .el-aside {
+  .aside1 {
     width: 80% !important;
   }
-  .el-main {
-    width:96%;
+  .main1 {
+    width: 96%;
     margin-left: 2%;
   }
-  .el-header {
+  .header1 {
     line-height: 40px;
   }
   h1 {

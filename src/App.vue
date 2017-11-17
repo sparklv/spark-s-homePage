@@ -6,6 +6,7 @@
 
 <script>
 import animate from "animate.css";
+import "babel-polyfill";
 export default {
   name: "app"
 };
@@ -31,15 +32,15 @@ h1 {
 .el-submenu__title i {
   color: #fff;
 }
-.el-collapse-item__header{
-  background-color:rgb(13,55,138) !important;
-  color:#fff !important;
-  padding-left:10px !important;
+.el-collapse-item__header {
+  background-color: rgb(13, 55, 138) !important;
+  color: #fff !important;
+  padding-left: 10px !important;
 }
-.el-collapse-item__content{
-  padding:10px !important;
+.el-collapse-item__content {
+  padding: 10px !important;
 }
-ul{
+ul {
   list-style: none;
   text-align: left;
 }

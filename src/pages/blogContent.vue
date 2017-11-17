@@ -45,7 +45,6 @@ section {
   width: 95%;
   text-align: left;
   background-color: #fff;
-  overflow: auto;
 }
 .markdown {
   padding: 30px;
