@@ -11,7 +11,7 @@
       </el-steps>
     </div>
     <audio id="music" src="http://ozgnrqjtt.bkt.clouddn.com/Owl%20City%20-%20The%20Saltwater%20Room.mp3" 
-    autoplay="autoplay" style="position:absolute;top:10px;">
+    autoplay="autoplay" loop="loop" style="position:absolute;top:10px;">
     </audio>
     <img id="musicc" src="http://ozgnrqjtt.bkt.clouddn.com/music.png" @click="stopMusic()" alt="music">    
     <router-view></router-view>

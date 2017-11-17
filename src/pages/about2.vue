@@ -1,15 +1,15 @@
 <template>
   <section class="animated">
     <h2 style="margin:10px;margin-left:100px;text-decoration:underline;color:#fff">自我介绍 ></h2>
-    <div style="width:100%;text-align:center;">
-       <img class="img1" src="http://ozgnrqjtt.bkt.clouddn.com/lifeme.jpg" width="250" height="250"alt="lifeme" style="border:3px solid #ccc;">
-      <img class="img2" src="http://ozgnrqjtt.bkt.clouddn.com/me2.jpg" width="250" height="250"alt="me2" style="margin-left:10%;border:3px solid #ccc;">
-      <img class="img3" src="http://ozgnrqjtt.bkt.clouddn.com/me3.jpg" width="216" height="288" alt="me3" style="margin-left:10%;border:3px solid #ccc;">
+    <div class="img-box0" style="width:100%;text-align:center;">
+       <img class="img1" src="http://ozgnrqjtt.bkt.clouddn.com/lifeme.jpg"alt="lifeme">
+      <img class="img2" src="http://ozgnrqjtt.bkt.clouddn.com/me2.jpg" alt="me2">
+      <img class="img3" src="http://ozgnrqjtt.bkt.clouddn.com/me3.jpg" alt="me3">
       <div style="clear:both;"></div>
     </div>
     <div style="width:100%;text-align:center;margin-top:30px;">
        <div style="display:inline-block">
-              <ul>
+              <ul class="aboutme0">
                   <li>姓名：吕文彬</li>
                   <li>手机：17612187476</li>
                   <li>学校：安徽大学（211 本科）</li>
@@ -84,34 +84,66 @@ a {
   color: #fff;
 }
 @keyframes buling {
-  from{
+  from {
     opacity: 0.5;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
 @keyframes buling2 {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
-.img1{
-  transform:rotate(-20deg);
+.img1 {
+  width: 250px;
+  height: 250px;
+  border: 3px solid #ccc;
+  transform: rotate(-20deg);
   animation: buling 1s infinite;
-  animation-direction:alternate;
+  animation-direction: alternate;
 }
-.img2{
-  transform:rotate(20deg);
+.img2 {
+  width: 250px;
+  height: 250px;
+  margin-left: 10%;
+  border: 3px solid #ccc;
+  transform: rotate(20deg);
   animation: buling 1s infinite;
-  animation-direction:alternate;  
+  animation-direction: alternate;
 }
-.img3{
+.img3 {
+  width: 216px;
+  height: 288px;
+  margin-left: 10%;
+  border: 3px solid #ccc;
   transform: rotate(-10deg);
   animation: buling 1s infinite;
-  animation-direction:alternate;  
+  animation-direction: alternate;
+}
+@media screen and (max-width: 936px) {
+  .right-text {
+    display: none;
+  }
+  .img1 {
+    width: 125px;
+    height: 125px;
+  }
+  .img2 {
+    width: 125px;
+    height: 125px;
+  }
+  .img3 {
+    display: none;
+    width: 108px;
+    height: 144px;
+  }
+  .img-box0{
+    margin-top:24px;
+  }
 }
 </style>

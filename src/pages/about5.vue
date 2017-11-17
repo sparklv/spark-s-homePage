@@ -38,6 +38,9 @@
             </div>                   
         </div>
         </div>
+        <div class="advice">
+          完整内容，请使用PC观看，谢谢！
+        </div>
   </section>
 </template>
 
@@ -60,6 +63,7 @@ section {
   height: 100%;
   position: absolute;
   background-color: #96cdcd;
+  overflow: hidden;
 }
 @keyframes show1 {
   from {
@@ -114,5 +118,26 @@ img {
 }
 h4 {
   margin: 5px;
+}
+.advice {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  display: none;
+}
+@media screen and (max-width: 1050px) {
+  img {
+    width: 130px;
+    height: 130px;
+  }
+  .pro-img {
+    margin-left: 0px;
+  }
+  .protext {
+    display: none;
+  }
+  .advice {
+    display: block;
+  }
 }
 </style>
