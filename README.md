@@ -1,15 +1,16 @@
 # homePage
+My homepage, including personal profiles, personal blogs and so on the technology used mainly includes
+
 我的主页，包括个人简介，个人博客等等 用到的技术主要包括
 
-vue2.0
-vueRouter
-vuex
-elementUI
-axios
-makedjs
-highlightjs
-自己写的插件
-> spark's blog
+* vue2.0
+* vueRouter
+* vuex
+* elementUI
+* axios
+* makedjs
+* highlightjs
+* own plugin/自己写的插件
 
 ## Build Setup
 ``` bash
