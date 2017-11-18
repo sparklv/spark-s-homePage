@@ -430,7 +430,14 @@ li {
     flex-direction: column-reverse;
   }
   .aside1 {
+    order: -2;
     width: 80% !important;
+    margin-left: 10%;
+  }
+  .aside2 {
+    order: -1;
+    width: 80% !important;
+    margin-left: 10%;
   }
   .main1 {
     width: 96%;
