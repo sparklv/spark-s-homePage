@@ -24,6 +24,7 @@ export default {
     gotoPage() {
       let data = JSON.stringify(this.content);
       sessionStorage.setItem("nowContent", data);
+      this.$store.commit("changeContent", this.content);
       this.$router.push("blogContent");
     },
     mHover() {
@@ -40,7 +41,7 @@ export default {
 
 <style scoped>
 .box {
-  width: 80%;
+  width: 90%;
   margin-top: 30px;
   border-radius: 5px;
   border-left: 4px solid rgb(57, 114, 160);

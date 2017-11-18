@@ -32,7 +32,7 @@
         <img class="wechat" src="http://ozgnrqjtt.bkt.clouddn.com/wechat.jpg" alt="wechat">
         <div>awesomebin</div>
     </el-dialog>
-      <div class="aside1">
+      <div class="aside1" id="aside">
         <div style="color:#fff;padding:20px 0;font-size:20px;border-bottom:0.5px solid #ccc">
           文章分类
           <br>
@@ -86,6 +86,16 @@
         <router-view/>
         <i :class="{iconfont:true,'icon-arrow-circle-o-top':true,animated:true,fadeOut:!topshow,fadeIn:topshow}" @click="toTop()"></i>
       </div>
+      </div>
+      <div id="aside2" class="aside2"> 
+        <div class="recommend">
+          <h3 style="margin:10px">推荐文章</h3>
+           <recommend v-for="item in recommendList" :showDate=false :content="item" :key="item.name"></recommend>
+        </div>
+         <div class="recommend">
+          <h3 style="margin:10px">最新文章</h3>          
+           <recommend v-for="item in recentList" :showDate=true :content="item" :key="item.name"></recommend>
+        </div>
       </div>
     </div>
     <div class="footer1">
@@ -162,7 +172,8 @@ export default {
       topshow: false,
       today: {},
       dialogVisible: false,
-      recommendList
+      recommendList,
+      recentList: []
     };
   },
   created() {
@@ -176,12 +187,28 @@ export default {
     });
     this.$store.commit("changeList", this.showList);
     sessionStorage.setItem("nowArr", JSON.stringify(this.showList));
+    this.recentList = this.showList.splice(0, 5);
   },
   mounted() {
+    let aside = document.getElementById("aside");
+    let aside2 = document.getElementById("aside2");
     window.addEventListener("scroll", e => {
-      if (document.documentElement.scrollTop > 200) {
+      if (document.documentElement.scrollTop > 220) {
+        if (window.innerWidth > 800) {
+          if (
+            document.documentElement.scrollHeight - 900 >
+            document.documentElement.scrollTop
+          ) {
+            aside.style.marginTop =
+              document.documentElement.scrollTop - 200 + "px";
+            aside2.style.marginTop =
+              document.documentElement.scrollTop - 200 + "px";
+          }
+        }
         this.topshow = true;
       } else {
+        aside.style.marginTop = 20 + "px";
+        aside2.style.marginTop = 20 + "px";
         this.topshow = false;
       }
     });
@@ -302,9 +329,9 @@ a {
   margin-top: 50px;
 }
 .aside1 {
-  width: 260px;
+  width: 240px;
   margin-top: 20px;
-  margin-left: 10%;
+  margin-left: 5%;
   text-align: center;
   color: white;
   min-width: 200px;
@@ -343,11 +370,22 @@ a {
     rgb(10, 53, 137) 100%
   );
 }
-
+.aside2 {
+  width: 230px;
+  margin-top: 20px;
+  margin-right: 2%;
+  text-align: left;
+  color: white;
+  min-width: 200px;
+  min-height: 400px;
+  max-height: 600px;
+  overflow: hidden;
+  background: rgb(34, 83, 156);
+}
 .main1 {
   margin-top: 20px;
-  margin-left: 5%;
-  width: 90%;
+  margin-left: 3%;
+  width: 100%;
   overflow: visible;
   color: #333;
   text-align: left;
@@ -389,7 +427,7 @@ li {
 }
 @media screen and (max-width: 768px) {
   .container2 {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .aside1 {
     width: 80% !important;

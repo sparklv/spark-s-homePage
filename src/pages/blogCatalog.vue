@@ -40,7 +40,12 @@ export default {
   components: {
     articleBar
   },
-  mounted() {},
+  mounted() {
+    document.documentElement.scrollTop = 0;
+  },
+  updated() {
+    document.documentElement.scrollTop = 0;
+  },
   methods: {
     search() {
       let articleList = JSON.parse(sessionStorage.getItem("nowArr"));
@@ -80,7 +85,7 @@ section {
     position: relative;
     width: 120%;
     padding: 10px;
-    padding-left:0;
+    padding-left: 0;
   }
 }
 </style>
