@@ -1,5 +1,8 @@
 <template>
     <section class="animated slideInUp" v-loading="loading">
+      <div style="margin-top:20px;margin-left:20px;">
+        <el-button type="primary" icon="el-icon-back" @click="backToCata()">返回</el-button>        
+      </div>
       <div class="markdown" v-html="content"></div>
     </section>
 </template>
@@ -21,7 +24,7 @@ export default {
   },
   updated() {
     setTimeout(this.$hljs.highlightCode, 0);
-    document.documentElement.scrollTop = 0;    
+    document.documentElement.scrollTop = 0;
   },
   computed: {
     getNow() {
@@ -47,6 +50,9 @@ export default {
         .catch(function(err) {
           console.log("error");
         });
+    },
+    backToCata() {
+      this.$router.push("blogCatalog");
     }
   }
 };

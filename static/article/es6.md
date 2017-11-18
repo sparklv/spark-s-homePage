@@ -1,5 +1,6 @@
 # ES6
-<hr>
+
+---
 
 ECMAScript 6 在接下来的一段时间内将成为 ECMAScript的一个标准。不管在Github,还是在很多社区，javascript爱好者已经早已开始拥抱变化，享受ES6 带来的美好,这篇文章将介绍ES6的一些新特性。
 

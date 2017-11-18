@@ -1,5 +1,6 @@
 # HTTP-note
-<hr>
+
+---
 
 ## URL
 

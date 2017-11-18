@@ -1,5 +1,6 @@
 # Javascript
-<hr>
+
+---
 
 ## 本笔记基于javascript高级程序设计第三版，加上自身实践经验攥写
 
