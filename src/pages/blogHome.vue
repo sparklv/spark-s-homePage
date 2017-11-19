@@ -177,6 +177,7 @@ export default {
     };
   },
   created() {
+    sessionStorage.removeItem("nowArr");
     this.showList = JSON.parse(JSON.stringify(articleList));
     this.showList.sort(function(a, b) {
       let aArr = a.date.split("-");
@@ -190,6 +191,8 @@ export default {
     this.recentList = this.showList.splice(0, 5);
   },
   mounted() {
+    let menu = document.getElementsByClassName("el-menu-item");
+    menu[0].click();
     let aside = document.getElementById("aside");
     let aside2 = document.getElementById("aside2");
     window.addEventListener("scroll", e => {
