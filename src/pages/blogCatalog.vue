@@ -75,7 +75,6 @@ section {
 }
 .aboutme {
   width: 50%;
-  padding: 10px;
   position: absolute;
   right: 0;
   top: 0;

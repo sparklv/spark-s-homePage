@@ -433,14 +433,15 @@ li {
     flex-direction: column-reverse;
   }
   .aside1 {
-    order: -2;
-    width: 80% !important;
-    margin-left: 10%;
+    order: 1;
+    width: 90% !important;
+    margin-left: 5%;
   }
   .aside2 {
     order: -1;
-    width: 80% !important;
-    margin-left: 10%;
+    width: 90% !important;
+    margin-left: 5%;
+    overflow:auto;
   }
   .main1 {
     width: 96%;
