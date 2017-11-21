@@ -1,6 +1,6 @@
 <template>
   <div class="container1">
-    <div class="header1">
+    <div class="header1" id="header1">
       <h1 style="color:#ccc">
         吕文彬的个人博客
         <br>
@@ -82,7 +82,7 @@
     </div> -->
     </div>
       <div class="container3">
-      <div class="main1">
+      <div class="main1" id="main1">
         <router-view/>
         <i :class="{iconfont:true,'icon-arrow-circle-o-top':true,animated:true,fadeOut:!topshow,fadeIn:topshow}" @click="toTop()"></i>
       </div>
@@ -98,7 +98,7 @@
         </div>
       </div>
     </div>
-    <div class="footer1">
+    <div class="footer1" id="footer1">
        <h4>快速链接</h4>
       <div class="footer-link">
         <div style="margin-top:10px;">
@@ -282,6 +282,8 @@ export default {
         this.$store.commit("changeSport", true);
       }, 100);
       this.$router.push("blogCatalog");
+      this.$store.commit("changeShowScope", "init");
+      document.documentElement.scrollTop = 0;
     },
     toTop() {
       let height = document.documentElement.scrollTop;
@@ -438,10 +440,11 @@ li {
     margin-left: 5%;
   }
   .aside2 {
+    display: none;
     order: -1;
     width: 90% !important;
     margin-left: 5%;
-    overflow:auto;
+    overflow: auto;
   }
   .main1 {
     width: 96%;

@@ -1,3 +1,4 @@
+import Vue from 'Vue'
 const mutations = {
     changeContent(state, val) {
         state.nowContent = val;
@@ -7,6 +8,14 @@ const mutations = {
     },
     changeSport(state, val) {
         state.sport = val;
+    },
+    changeShowScope(state, val) {
+        if (val == 'init') {
+            state.showScope = [0, 3];
+        }
+        else {
+            Vue.set(state.showScope, 1, state.showScope[1] + val)
+        }
     }
 }
 export default mutations

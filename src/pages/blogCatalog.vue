@@ -16,11 +16,14 @@
         </div>
         <div v-if="$store.state.articleList.length">
           <articleBar 
-        v-for="item in $store.state.articleList" 
+        v-for="item in $store.state.articleList.slice($store.state.showScope[0],$store.state.showScope[1])" 
         :content="item" :name="item.name"  
         :descript="item.descript" 
         :key="item.name"
         ></articleBar>
+        <div v-if="showLoading" style="width:100%;text-align:center;">
+          <img src="http://ozgnrqjtt.bkt.clouddn.com/loading.gif" alt="loading" width="50" height="50">
+        </div>
         </div>
         <div v-else>
           <h3>暂时没有文章哦！看看其他目录吧！</h3>
@@ -30,21 +33,60 @@
 
 <script>
 import articleBar from "@/components/articleBar";
+import Vue from "Vue";
 export default {
   name: "blogContent",
   data() {
     return {
-      searchText: ""
+      searchText: "",
+      showLoading: false
     };
   },
   components: {
     articleBar
   },
   mounted() {
-    document.documentElement.scrollTop = 0;
+    let vm = this;
+    function loadingPage() {
+      let header = document.getElementById("header1"),
+        main = document.getElementById("main1"),
+        footer = document.getElementById("footer1"),
+        hHeight = parseInt(header.scrollHeight),
+        mHeight = parseInt(main.scrollHeight),
+        fHeight = parseInt(footer.scrollHeight),
+        changeNum = 3,
+        short =
+          vm.$store.state.articleList.length - vm.$store.state.showScope[1];
+      if (vm.$store.state.articleList.length < 4) {
+        return false;
+      }
+      if (short == 0) {
+        return false;
+      }
+      if (short >= 3) {
+        changeNum = 3;
+      } else {
+        changeNum = short;
+      }
+      if (
+        document.documentElement.scrollHeight -
+          document.documentElement.clientHeight <=
+        parseInt(document.documentElement.scrollTop) + fHeight
+      ) {
+        vm.showLoading = true;
+        window.removeEventListener("scroll", loadingPage);
+        setTimeout(() => {
+          vm.$store.commit("changeShowScope", changeNum);
+          vm.showLoading = false;
+          window.addEventListener("scroll", loadingPage);
+        }, 1000);
+      }
+    }
+    window.addEventListener("scroll", loadingPage);
   },
-  updated() {
-    document.documentElement.scrollTop = 0;
+  updated() {},
+  destroyed() {
+    // window.removeEventListener("scroll", loadingPage);
   },
   methods: {
     search() {
@@ -62,6 +104,7 @@ export default {
         arr = articleList;
       }
       this.$store.commit("changeList", arr);
+      this.$store.commit("changeShowScope", "init");
     }
   }
 };
