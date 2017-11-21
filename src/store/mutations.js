@@ -16,6 +16,12 @@ const mutations = {
         else {
             Vue.set(state.showScope, 1, state.showScope[1] + val)
         }
+    },
+    changeBindScroll(state, val) {
+        state.isBindScroll = val;
+    },
+    changeLoading(state, val) {
+        state.showLoading = val;
     }
 }
 export default mutations

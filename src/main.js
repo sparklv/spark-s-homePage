@@ -20,7 +20,7 @@ Vue.use(ElementUI)
 Vue.prototype.$axios = axios
 Vue.prototype.$marked = marked
 Vue.prototype.$hljs = hljs
-new Vue({
+var vm = new Vue({
   el: '#app',
   router,
   store,

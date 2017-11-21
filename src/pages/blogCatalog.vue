@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div style="position:relative;width:80%">
+        <div id="catalog" style="position:relative;width:80%">
             <h2>搜索文章</h2>
             <el-input suffix-icon="el-icon-search" v-model="searchText" placeholder="搜索文章标题" @input="search" style="width:250px;"></el-input>
             <div :class="{animated:$store.state.sport,bounceInRight:$store.state.sport}" style="margin-top:10px;">该目录下共有<el-tag>{{$store.state.articleList.length}}</el-tag>篇文章</div>
@@ -21,7 +21,7 @@
         :descript="item.descript" 
         :key="item.name"
         ></articleBar>
-        <div v-if="showLoading" style="width:100%;text-align:center;">
+        <div v-if="$store.state.showLoading" style="width:100%;text-align:center;">
           <img src="http://ozgnrqjtt.bkt.clouddn.com/loading.gif" alt="loading" width="50" height="50">
         </div>
         </div>
@@ -38,8 +38,7 @@ export default {
   name: "blogContent",
   data() {
     return {
-      searchText: "",
-      showLoading: false
+      searchText: ""
     };
   },
   components: {
@@ -48,7 +47,7 @@ export default {
   mounted() {
     let vm = this;
     function loadingPage() {
-      if (!document.getElementById("footer1")) {
+      if (!document.getElementById("catalog")) {
         return false;
       }
       let footer = document.getElementById("footer1"),
@@ -72,16 +71,19 @@ export default {
           document.documentElement.clientHeight <=
         parseInt(document.documentElement.scrollTop) + fHeight
       ) {
-        vm.showLoading = true;
+        vm.$store.commit("changeLoading", true);
         window.removeEventListener("scroll", loadingPage);
         setTimeout(() => {
           vm.$store.commit("changeShowScope", changeNum);
-          vm.showLoading = false;
+          vm.$store.commit("changeLoading", false);
           window.addEventListener("scroll", loadingPage);
         }, 1000);
       }
     }
-    window.addEventListener("scroll", loadingPage);
+    if (!this.$store.state.isBindScroll) {
+      window.addEventListener("scroll", loadingPage);
+      this.$store.commit("changeBindScroll", true);
+    }
   },
   updated() {},
   destroyed() {},
