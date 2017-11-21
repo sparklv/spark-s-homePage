@@ -48,11 +48,10 @@ export default {
   mounted() {
     let vm = this;
     function loadingPage() {
-      let header = document.getElementById("header1"),
-        main = document.getElementById("main1"),
-        footer = document.getElementById("footer1"),
-        hHeight = parseInt(header.scrollHeight),
-        mHeight = parseInt(main.scrollHeight),
+      if (!document.getElementById("footer1")) {
+        return false;
+      }
+      let footer = document.getElementById("footer1"),
         fHeight = parseInt(footer.scrollHeight),
         changeNum = 3,
         short =
@@ -85,9 +84,7 @@ export default {
     window.addEventListener("scroll", loadingPage);
   },
   updated() {},
-  destroyed() {
-    // window.removeEventListener("scroll", loadingPage);
-  },
+  destroyed() {},
   methods: {
     search() {
       let articleList = JSON.parse(sessionStorage.getItem("nowArr"));
