@@ -117,7 +117,7 @@ js中一切都区分大小写
 
 ECMAScript3中的一些不确定的行为将会得到处理，对某些不安全的错误也会抛出错误
 
-#### 语句
+#### js语句
 
 js中的语句以一个分号结尾，虽然分号不是必须的，但是最好要加上，避免不必要的错误
 
@@ -125,6 +125,7 @@ js中的语句以一个分号结尾，虽然分号不是必须的，但是最好
 
 不能用作标识符
 
+```javascript
  `break`  `do`  `instanceof`  `typeof`  `case`  `else`  `new`  `var`
 
  `catch`  `finally`  `return`  `void`  `continue`   `for`   `switch`   `while`
@@ -144,6 +145,7 @@ js中的语句以一个分号结尾，虽然分号不是必须的，但是最好
  `const`   `export`   `import`  `implements`   `package`   `public`
 
  `interface`   `private`   `static`  `let`   `protected`   `yield`
+```
 
 以上包含所有保留字和关键字（包括严格模式）
 
@@ -351,3 +353,93 @@ var o = new Object
 #### 逗号操作符
 
 * 用于声明多个变量
+
+### 语句
+
+#### if语句
+
+```javascript
+if(condition) statement1 else statement2
+```
+
+如果condition的结果不是布尔值，会调用Boolean()转型函数
+
+#### do-while语句
+
+```javascript
+do{statement}while(expression)
+```
+
+#### while语句
+
+```javascript
+while(expression) statement
+```
+
+#### for语句
+
+```javascript
+for(initialization;expression;post-loop-expression) statement
+```
+
+#### for-in语句
+
+可用来枚举对象的属性
+
+```javascript
+for(var property in expression) statement
+```
+
+var不是必须，但是保证是局部变量要带上
+
+#### break和continue
+
+用在循环中，控制循环，break是跳出整个循环，而continue是跳出本次循环
+
+#### label
+
+可以在代码中设置标签，多用于循环嵌套结构，与break和continue联用
+
+```javascript
+lable:for(){
+  for(){
+    break label;
+  }
+}
+```
+
+#### with
+
+将代码作用域设置到一个特定的对象中
+
+```javascript
+with (expression) statement
+```
+
+#### switch
+
+如果expression等于case那么执行后面的表达式
+
+```javascript
+switch(expression){
+  case expression or value: statement
+    break;
+  case expression or value: statement
+    break;
+  case expression or value: statement
+    break;
+  default: statement
+}
+```
+
+break代表跳出switch不会执行下一种情况，如果需要执行所有符合的代码，可以不用break
+
+### 函数
+
+函数使用`return`返回值，`return`后的语句不会被执行，如果没有返回值，返回`undefined`(`return后可以没有值`)
+
+js中函数是没有重载的，即使参数数量和类型不同，后面定义的同名函数会替代前面的函数
+
+可以使用arguments这个类数组来访问参数，它的值和对应的命名参数保持一致(必须是传入的参数)。所以，对arguments数组中的一项赋值，会同步更新命名参数，对于没有传入的参数，则会自动赋值undefined。
+
+注意：在严格模式下，对arguments中其中一项赋值会无效，重写arguments在严格模式下会导致语法错误
