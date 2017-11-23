@@ -1,4 +1,4 @@
-# Javascript
+# Javascript(1)
 
 ---
 
@@ -173,6 +173,14 @@ var m=1,n=2,b=3;
 * number -- "number"
 * null object -- "object"
 * function -- "function"
+
+如果要详细验证对象的种类（Array，object等），可以使用instanceof操作符。
+例如
+
+```js
+let arr = [1,2,3]
+arr instanceof Array //true
+```
 
 #### Undefined
 
@@ -441,5 +449,20 @@ break代表跳出switch不会执行下一种情况，如果需要执行所有符
 js中函数是没有重载的，即使参数数量和类型不同，后面定义的同名函数会替代前面的函数
 
 可以使用arguments这个类数组来访问参数，它的值和对应的命名参数保持一致(必须是传入的参数)。所以，对arguments数组中的一项赋值，会同步更新命名参数，对于没有传入的参数，则会自动赋值undefined。
+
+另外，函数参数是按值传递的，引用类型则是传递的指针，例如
+
+```js
+  obj1 = {
+    name:'aaa'
+  }
+  (funtion(obj1){
+    obj1 = new Object();
+    obj1.name = 'bbb'
+  })(obj1)
+  obj1.name //aaa
+```
+
+如果是按引用传递的话，obj1.name应该变为bbb，但是最后还是aaa说明是按值传递。
 
 注意：在严格模式下，对arguments中其中一项赋值会无效，重写arguments在严格模式下会导致语法错误
