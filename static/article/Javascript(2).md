@@ -22,20 +22,26 @@ js没有块级作用域只有函数级作用域
 
 创建Object实例有两种方法
 
-* `var p = new Object(); p.name = "bin";`
-* `var p = {name:"bin"};`
+```javascript
+var p = new Object(); p.name = "bin";
+var p = {name:"bin"};
+```
 
 object实例访问属性有两种方法
 
-* `p.name`
-* `p["name"]`
+```javascript
+p.name
+p["name"]
+```
 
 ### Array
 
 #### 创建数组
 
-* var arr = new Array() //参数为数字则是定义长度，其他数据类型，则是定义项
-* var arr = [1,2,3]
+```javascript
+var arr = new Array() //参数为数字则是定义长度，其他数据类型，则是定义项
+var arr = [1,2,3]
+```
 
 #### 检测数组
 
@@ -97,11 +103,17 @@ FIFO
 
 以下每个方法都接受两个参数，一个是处理函数，另一个（可选，是作用域this）。另外处理函数都可以接受三个参数，第一个是数组项，第二个是该项的索引，第三个是原数组
 
-* every():对数组每一项运行指定函数，如果每一项都返回true，则返回true
-* some():对数组每一项运行制定函数，如果有一项返回true，则返回true
-* filter():对数组每一项运行指定函数，返回该函数返回true的项，组成的数组
-* forEach():对数组每一项执行指定函数，没有返回值
-* map():对数组每一项运行制定函数，返回函数返回结果组成的数组
+```javascript
+every():对数组每一项运行指定函数，如果每一项都返回true，则返回true
+
+some():对数组每一项运行制定函数，如果有一项返回true，则返回true
+
+filter():对数组每一项运行指定函数，返回该函数返回true的项，组成的数组
+
+forEach():对数组每一项执行指定函数，没有返回值
+
+map():对数组每一项运行制定函数，返回函数返回结果组成的数组
+```
 
 #### 归并方法
 
@@ -135,13 +147,21 @@ Date的实例同样有toString()、toLocaleString()、valueOf()方法，可以�
 
 ```js
 getTime():获取毫秒数
+
 getFullYear():获取四位数年份
+
 getMonth():获取基于0的月份
-getDate():返回日期月份中的天数，`1-31`
+
+getDate():返回日期月份中的天数
+
 getDay():返回日期中的星期几
+
 getHours():基于0的小时数
+
 getMinutes():基于0的分钟数
+
 getSeconds():返回日期中的秒数
+
 getMilliseconds():返回日期中的毫秒数
 ```
 
@@ -161,11 +181,17 @@ getMilliseconds():返回日期中的毫秒数
 
 #### 实例属性
 
-* global：是否设置了g标志
-* ignoreCasw：是否设置了i标志
-* lastIndex：表示开始搜索下一个匹配项的字符位置
-* multiline：是否设置了m标志
-* source：正则表达式的字符串表示（按字面量形式）
+```javascript
+global：是否设置了g标志
+
+ignoreCasw：是否设置了i标志
+
+lastIndex：表示开始搜索下一个匹配项的字符位置
+
+multiline：是否设置了m标志
+
+source：正则表达式的字符串表示（按字面量形式）
+```
 
 #### 实例方法
 
