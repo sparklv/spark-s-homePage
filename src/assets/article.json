@@ -16,14 +16,14 @@
     {
         "url": "Javascript(1).md",
         "name": "Javascript(1)",
-        "type": "Javascript(1)",
+        "type": "Javascript",
         "descript": "js是前端的基础，是所有框架的基础，学好，js是重中之重",
         "date": "2017-11-17"
     },
     {
         "url": "Javascript(2).md",
         "name": "Javascript(2)",
-        "type": "Javascript(2)",
+        "type": "Javascript",
         "descript": "该部分内容主要包括垃圾处理机制、作用域、引用类型、闭包、继承等",
         "date": "2017-11-23"
     },
