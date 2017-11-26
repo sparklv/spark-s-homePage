@@ -14,6 +14,13 @@
         "date": "2017-11-14"
     },
     {
+        "url": "JS正则表达式.md",
+        "name": "JS正则表达式",
+        "type": "Javascript",
+        "descript": "正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为'元字符'）。",
+        "date": "2017-11-26"
+    },
+    {
         "url": "Javascript(1).md",
         "name": "Javascript(1)",
         "type": "Javascript",
