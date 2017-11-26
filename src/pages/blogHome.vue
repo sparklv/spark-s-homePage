@@ -76,10 +76,6 @@
         <span slot="title">Free</span>
       </el-menu-item>
     </el-menu>
-    <!-- <div style="margin-top:30px;padding-top:20px;border-top:0.5px solid #ccc">
-      推荐文章
-      <recommend v-for="item in recommendList" :content="item" :key="item.name"></recommend>
-    </div> -->
     </div>
       <div class="container3">
       <div class="main1" id="main1">
@@ -295,7 +291,7 @@ export default {
           } else {
             document.documentElement.scrollTop = 0;
           }
-        }, i * 40);
+        }, i * 20);
       }
     }
   }
@@ -404,9 +400,10 @@ a {
   bottom: 60px;
   right: 10px;
   cursor: pointer;
+  color: #417eb7;
 }
 .icon-arrow-circle-o-top:hover {
-  color: #417eb7;
+  color: #ccc;
 }
 ul,
 li {
