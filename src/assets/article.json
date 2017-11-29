@@ -32,7 +32,7 @@
         "name": "Javascript(2)",
         "type": "Javascript",
         "descript": "该部分内容主要包括垃圾处理机制、作用域、引用类型、闭包、继承等",
-        "date": "2017-11-23"
+        "date": "2017-11-29"
     },
     {
         "url": "es6.md",
