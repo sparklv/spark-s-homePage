@@ -299,46 +299,8 @@ export default {
 </script>
 
 
-<style scoped>
-a {
-  text-decoration: none;
-  color: #fff;
-}
-.container1 {
-  display: flex;
-  flex-direction: column;
-}
-.container2 {
-  display: flex;
-  flex-direction: row;
-}
-.header1 {
-  background-color: #417eb7;
-  color: #333;
-  text-align: center;
-  line-height: 45px;
-  height: 220px !important;
-  width: 100%;
-  z-index: 1;
-  background: url("http://ozgnrqjtt.bkt.clouddn.com/4bc967a17c8c2e865efc1d8ad96cf1e1.jpg")
-    no-repeat 50% 50%;
-}
-.footer1 {
-  background-color: #333;
-  color: #fff;
-  text-align: left;
-  margin-top: 50px;
-}
-.aside1 {
-  width: 240px;
-  margin-top: 20px;
-  margin-left: 5%;
-  text-align: center;
-  color: white;
-  min-width: 200px;
-  min-height: 400px;
-  max-height: 600px;
-  overflow: hidden;
+<style scoped lang="scss">
+@mixin aside-bgColor {
   background: -webkit-linear-gradient(
     bottom,
     rgb(18, 151, 215),
@@ -370,6 +332,62 @@ a {
     rgb(65, 126, 183) 50%,
     rgb(10, 53, 137) 100%
   );
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.container1 {
+  display: flex;
+  flex-direction: column;
+}
+.container2 {
+  display: flex;
+  flex-direction: row;
+}
+.header1 {
+  background-color: #417eb7;
+  color: #333;
+  text-align: center;
+  line-height: 45px;
+  height: 220px !important;
+  width: 100%;
+  z-index: 1;
+  background: url("http://ozgnrqjtt.bkt.clouddn.com/4bc967a17c8c2e865efc1d8ad96cf1e1.jpg")
+    no-repeat 50% 50%;
+}
+.footer1 {
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  margin-top: 50px;
+  .footer-link {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.aside1 {
+  width: 240px;
+  margin-top: 20px;
+  margin-left: 5%;
+  text-align: center;
+  color: white;
+  min-width: 200px;
+  min-height: 400px;
+  max-height: 600px;
+  overflow: hidden;
+  @include aside-bgColor;
+  i {
+    font-size: 20px;
+    color: #fff;
+  }
+  .el-menu-item.is-active {
+    i {
+      color: #ffa500;
+    }
+  }
 }
 .aside2 {
   width: 230px;
@@ -413,19 +431,6 @@ li {
 .wechat {
   width: 40%;
   height: 40%;
-}
-.footer-link {
-  margin-left: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.aside1 i {
-  font-size: 20px;
-  color: #fff;
-}
-.aside1 .el-menu-item.is-active i {
-  color: #ffa500;
 }
 @media screen and (max-width: 768px) {
   .container2 {

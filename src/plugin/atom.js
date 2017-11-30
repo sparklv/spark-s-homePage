@@ -12,21 +12,25 @@ function DrawAtom(root, opt) {
     this.domWidth = root.width;
     this.pointColor = options.pointColor || "#ECEEEF";
     this.lineColor = options.lineColor || "#F5EEFA";
-    this.pointNum = options.num || 20;
+    this.pointNum = options.num || 25;
     this.pointArr = [];
-    // this.colorArr = ['#4F94CD', '#48D1CC', '#388E8E', '#20B2AA', '#00BFFF','#00B2EE','#009ACD'];
+    this.nowColorIndex = 0;
+    this.colorArr = ['#ECEEEF', '#FFF0F5', '#C6E2FF', '#B4EEB4', '#CAE1FF', '#EEE8AA', '#FFE4E1'];
 }
 //绑定鼠标移动事件，启动绘图
 DrawAtom.prototype.run = function () {
     this.dom.addEventListener('mousemove', this.moveDraw.bind(this))
     this.dom.addEventListener('mouseout', this.moveoutDraw.bind(this))
     this.makePoint();
-    // setInterval(function () {
-    //     let random = Math.floor(Math.random() * 10);
-    //     if (random < this.colorArr.length) {
-    //         this.pointColor = this.colorArr[random]
-    //     }
-    // }.bind(this), 2000)
+    setInterval(function () {
+        this.pointColor = this.colorArr[this.nowColorIndex];
+        this.lineColor = this.colorArr[this.nowColorIndex];
+        if (this.nowColorIndex == this.colorArr.length) {
+            this.nowColorIndex = 0;
+        } else {
+            this.nowColorIndex++;
+        }
+    }.bind(this), 2000)
 }
 //鼠标移动函数
 DrawAtom.prototype.moveDraw = function (event) {

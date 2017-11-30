@@ -50,7 +50,8 @@ export default {
 </script>
 
 
-<style scoped>
+<style scoped lang="scss">
+$text-color:rgb(15,136,235);
 section {
   text-align: center;
   position: relative;
@@ -61,7 +62,7 @@ section {
   width: 100%;
   top: 10%;
   font-size: 40px;
-  color:rgb(15,136,235);
+  color:$text-color;
   font-family: "Times New Roman", Times, serif;
 }
 .bar {
@@ -80,7 +81,7 @@ section {
   font-size: 18px;
 }
 a {
-  color: rgb(15,136,235);
+  color: $text-color;
 }
 @media screen and (max-width: 768px) {
   .title {

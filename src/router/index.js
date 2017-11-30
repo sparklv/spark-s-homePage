@@ -11,12 +11,18 @@ import about3 from '@/pages/about3'
 import about4 from '@/pages/about4'
 import about5 from '@/pages/about5'
 import about6 from '@/pages/about6'
+import Welcome from '@/pages/welcomePage'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Welcome',
+      component: Welcome
+    },
+    {
+      path: '/intro',
       name: 'Intro',
       component: Intro
     },

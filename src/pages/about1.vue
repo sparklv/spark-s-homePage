@@ -1,5 +1,6 @@
 <template>
   <section :class="{animated:true,fadeOut:pageout}">
+      <el-button @click="backToHome()" icon="el-icon-back" type="info" style="position:absolute;left:20px;top:20px;">Back to Home!</el-button>
       <img class="homeme" src="http://ozgnrqjtt.bkt.clouddn.com/homeme.jpg" alt="me" width="200" height="200">
       <h1>吕文彬</h1>
       <div style="margin-top:20px;">sparklv@outlook.com</div>
@@ -20,7 +21,11 @@ export default {
     this.pageout = true;
   },
   components: {},
-  methods: {}
+  methods: {
+    backToHome(){
+      this.$router.push("/Intro");
+    }
+  }
 };
 </script>
 
