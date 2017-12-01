@@ -42,7 +42,15 @@ export default {
       var cwidth = document.body.clientWidth;
       atom.setAttribute("width", cwidth);
       atom.setAttribute("height", cheight);
-      var obj = new DrawAtom(atom,{pointColor:'#BFEFFF',lineColor:'#BFEFFF'});
+      let num = 25;
+      if (cwidth < 800) {
+        num = 10;
+      }
+      var obj = new DrawAtom(atom, {
+        pointColor: "#BFEFFF",
+        lineColor: "#BFEFFF",
+        num: num
+      });
       obj.run();
     }
   }
@@ -51,23 +59,23 @@ export default {
 
 
 <style scoped lang="scss">
-$text-color:rgb(15,136,235);
+$text-color: rgb(15, 136, 235);
 section {
   text-align: center;
   position: relative;
-  background-color: rgb(247,250,252);
+  background-color: rgb(247, 250, 252);
 }
 .title {
   position: absolute;
   width: 100%;
   top: 10%;
   font-size: 40px;
-  color:$text-color;
+  color: $text-color;
   font-family: "Times New Roman", Times, serif;
 }
 .bar {
   position: absolute;
-  width:20%;
+  width: 20%;
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
@@ -85,10 +93,10 @@ a {
 }
 @media screen and (max-width: 768px) {
   .title {
-    font-size:25px;
+    font-size: 25px;
   }
   .bar {
-    top:25%;
+    top: 25%;
     width: 80%;
   }
 }
