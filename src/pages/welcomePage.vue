@@ -142,7 +142,7 @@ canvas {
     transform: scale(1, 1) translateY(-40px);
   }
   to {
-    transform: scale(1.3, 1.3) translateY(-40px);
+    transform: scale(1.1, 1.1) translateY(-40px);
   }
 }
 .icon-dianji {

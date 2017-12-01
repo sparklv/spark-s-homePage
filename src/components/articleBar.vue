@@ -1,11 +1,11 @@
 <template>
     <section :class="{box:true,animated:true,slideInUp:inUp}" @mouseover="mHover" @mouseout="mOut">
-        <h2 style="color:rgb(57, 114, 160)">{{name}}</h2>
+        <h2 class="title" @click="gotoPage()">{{name}}</h2>
         <div class="descript">{{descript}}</div>
         <div style="float:left;margin-top:10px;">
           <el-tag>{{content.date}}</el-tag>
         </div>
-        <el-button type="primary" style="float:right;margin-right:20px;;margin-bottom:20px;margin-top:5px;" @click="gotoPage()">阅读文章</el-button>
+        <el-button class="into-btn" type="primary"  @click="gotoPage()">阅读文章</el-button>
     </section>
 </template>
 
@@ -39,21 +39,33 @@ export default {
 </script>
 
 
-<style scoped>
+<style scoped lang="scss">
 .box {
   width: 90%;
   margin-top: 30px;
   border-radius: 5px;
+  border: 1px solid #ccc;
   border-left: 4px solid rgb(57, 114, 160);
   padding: 10px;
   background-color: #fff;
-  overflow: auto;
+  overflow: hidden;
+  .title {
+    color: rgb(57, 114, 160);
+    width: 96%;
+    cursor: pointer;
+  }
+  .into-btn {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
 }
 .box:hover {
-  transform: translateY(-10px);
-  box-shadow: 3px 3px #ccc;
+  transform: translateX(6px);
+  border-left: 4px solid #191970;
+  box-shadow: 4px 4px #ccc;
 }
-.box > h2,
 .descript {
   width: 96%;
 }
