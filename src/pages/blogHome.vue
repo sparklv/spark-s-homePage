@@ -361,12 +361,6 @@ a {
   color: #fff;
   text-align: left;
   margin-top: 50px;
-  .footer-link {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
 }
 .aside1 {
   width: 240px;
@@ -431,6 +425,12 @@ li {
 .wechat {
   width: 40%;
   height: 40%;
+}
+.footer-link {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
   .container2 {
