@@ -1,11 +1,13 @@
 <template>
   <section>
-    <div id="into">
-      <div v-if="!isClick" @click="firstClick()">
+    <div id="into" v-if="!isClick" @click="firstClick()">
+      <div>
         <i class="iconfont icon-dianji"></i>
       </div>
-      <div v-else @click="secondClick()">
-        <span style="font-size:60px;color:#ccc">Entry</span>
+    </div>
+    <div id="into2" v-else @click="secondClick()">
+      <div>
+        <span style="font-size:40px;color:#ccc">Entry HomePage</span>
       </div>
     </div>
     <canvas id="black-hole"></canvas>
@@ -68,7 +70,7 @@ export default {
           }
         }
       } else {
-        this.rotation += this.speed / 2;
+        this.rotation += this.speed / 4;
         if (this.y > ch - (this.id % 100) * 10) {
           this.y -= 4;
         }
@@ -135,6 +137,14 @@ canvas {
   padding: 0;
   margin: 0;
 }
+@keyframes scaleshow {
+  from {
+    transform: scale(1, 1) translateY(-40px);
+  }
+  to {
+    transform: scale(1.3, 1.3) translateY(-40px);
+  }
+}
 .icon-dianji {
   font-size: 80px;
   margin-top: 50%;
@@ -153,10 +163,38 @@ canvas {
   margin-top: -100px;
   margin-left: -100px;
   background-color: #333;
-  transition: all 800ms;
   div {
     margin-top: 50%;
-    transform: translateY(-40px);
+    animation: scaleshow 2s infinite linear alternate;
   }
+  div:hover {
+    margin-top: 50%;
+    transform: translateY(-40px);
+    animation: none;
+  }
+}
+@keyframes slowshow {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  50% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  100% {
+    opacity: 0.8;
+    filter: alpha(opacity=50);
+  }
+}
+#into2 {
+  @extend #into;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  animation: slowshow 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  background: transparent;
+  overflow: visible;
 }
 </style>

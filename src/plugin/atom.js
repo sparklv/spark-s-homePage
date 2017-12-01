@@ -15,7 +15,9 @@ function DrawAtom(root, opt) {
     this.pointNum = options.num || 25;
     this.pointArr = [];
     this.nowColorIndex = 0;
-    this.colorArr = ['#ECEEEF', '#FFF0F5', '#C6E2FF', '#B4EEB4', '#CAE1FF', '#EEE8AA', '#FFE4E1'];
+    this.colorArr = ['#E0EEEE', '#ECEEEF', '#E8E8E8', '#E6E6FA', '#EED2EE', '#B0E2FF',
+        '#A4D3EE', '#B0E2FF', '#EED2EE', '#E6E6FA', '#E8E8E8', '#ECEEEF',
+    ]
 }
 //绑定鼠标移动事件，启动绘图
 DrawAtom.prototype.run = function () {
