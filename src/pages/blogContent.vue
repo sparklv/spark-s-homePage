@@ -1,5 +1,5 @@
 <template>
-    <section class="animated slideInUp" v-loading="loading">
+    <section id="content" class="animated slideInUp" v-loading="loading">
       <div style="margin-top:20px;margin-left:20px;">
         <el-button type="primary" icon="el-icon-back" @click="backToCata()">返回</el-button>        
       </div>
@@ -20,11 +20,27 @@ export default {
     this.getContent();
   },
   mounted() {
-    document.documentElement.scrollTop = 0;
+    let header = document.getElementById("header1");
+    let headerHeight = header.offsetHeight;
+    let aside1 = document.getElementById("aside");
+    let aside1Height = aside1.offsetHeight;
+    if (document.documentElement.clientWidth < 800) {
+      document.documentElement.scrollTop = headerHeight + aside1Height;
+    } else {
+      document.documentElement.scrollTop = 0;
+    }
   },
   updated() {
     setTimeout(this.$hljs.highlightCode, 0);
-    document.documentElement.scrollTop = 0;
+    let header = document.getElementById("header1");
+    let headerHeight = header.offsetHeight;
+    let aside1 = document.getElementById("aside");
+    let aside1Height = aside1.offsetHeight;
+    if (document.documentElement.clientWidth < 800) {
+      document.documentElement.scrollTop = headerHeight + aside1Height;
+    } else {
+      document.documentElement.scrollTop = 0;
+    }
   },
   computed: {
     getNow() {
