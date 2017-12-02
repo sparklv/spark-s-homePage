@@ -75,7 +75,7 @@ section {
 }
 .bar {
   position: absolute;
-  width: 20%;
+  width: 25%;
   top: 30%;
   left: 50%;
   transform: translateX(-50%);

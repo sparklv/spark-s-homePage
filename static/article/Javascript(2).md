@@ -728,4 +728,103 @@ var obj2 = {
 obj2.get2()//obj2
 ```
 
-## 未完待续 ^_^
+### 内存泄漏
+
+闭包会引起内存泄漏，当一个函数的另一个函数引用了外部函数的变量。那么，根据引用计数机制，变量至少是1。即使闭包没有运行，垃圾也无法回收，导致内存泄漏。
+
+解决方法就是对于用完的变量等使用null清空
+
+### 模仿块级作用域
+
+使用
+
+```javascript
+(function(){
+    //some variable and method
+}())
+
+//原理
+
+function x(){}() //error
+
+var x = function(){};
+x() //run
+```
+
+### 私有变量
+
+私有变量：任何函数中定义的变量都是私有变量。
+
+特权方法：能访问私有变量的方法。
+
+```javascript
+function Person(name){
+    this.getName = function(){
+        return name;
+    }
+}
+
+var x = new Person('spark');
+x.getName()//'spark'
+```
+
+上述方法有构造函数的缺点，就是没创建一个实例就创建一个相同的方法
+
+#### 静态私有变量
+
+```javascript
+(function(){
+    var name = 'spark'
+    Person = function(){
+
+    }
+    Person.prototype.getName = function(){
+        return name
+    }
+}())
+
+var x = new Person();
+x.getName() //'spark'
+```
+
+由于没有var声明，所以Person是全局的。但是这种方法又有一个缺点，就是所有实例共享一个name属性。
+
+#### 模块模式
+
+是为单例创建私有变量和特权方法，所谓单例就是只有一个实例的对象。
+
+例如
+
+```javascript
+var app = function(){
+    var components = new Array();
+    components.push(new BaseComponent());
+    return {
+        getComponents:function(){
+            return components.length
+        },
+        registerComponents:function(obj){
+            if(typeof obj == 'object'){
+                components.push(obj)
+            }
+        }
+    }
+}()
+```
+
+非常适用于，管理应用程序级的信息。
+
+#### 增强模块模式
+
+```javascript
+var app = function(){
+    var components = new Array();
+    components.push(new BaseComponent());
+    var object = new Object();
+    object.getComponents = function(){
+            return components.length
+        };
+    return object
+
+}()
+```

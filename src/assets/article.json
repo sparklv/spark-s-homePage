@@ -35,6 +35,13 @@
         "date": "2017-11-29"
     },
     {
+        "url": "Javascript(3).md",
+        "name": "Javascript(3)",
+        "type": "Javascript",
+        "descript": "该部分内容主要包括BOM、客户端检测、DOM、事件、样式、表单等",
+        "date": "2017-12-01"
+    },
+    {
         "url": "es6.md",
         "name": "es6",
         "type": "JavaScript",
