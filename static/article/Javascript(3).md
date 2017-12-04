@@ -80,4 +80,52 @@ setTimeout(fun,500);
 
 #### 系统对话框
 
+* alert():只接受一个字符串展现给用户
+* confirm():只接受一个字符串用于展现给用户，返回一个布尔值
+* prompt():接受两个字符串，一个是展示的字符串，二是输入文本域的默认值
+* print():打印对话框
+
+### location对象
+
+location是一个特别的对象，它既是window对象的属性，也是document对象的属性
+
+#### 属性
+
+* hash：hash值
+* host：服务器名和端口号
+* hostname：服务器名
+* href：完整URL
+* pathname：目录或文件名
+* port：端口号
+* protocol：协议
+* search：查询字符串
+
+#### 位置操作
+
+* assign()方法：改变浏览器位置，同样直接改变属性值亦可
+* replace()方法：不会在浏览器历史记录中生成新的记录，因此无法后退返回
+* reload()方法：重新加载当前显示的页面，如果不传递任何参数，并且页面没有改变，那么将从缓存中重新加载。如果传递一个true。那么，会从服务器中加载。
+
+### navigator
+
+用于检测显示网页的浏览器类型
+
+在ie中检测插件使用new ActiveXObject('name')
+
+其他浏览器可以使用navigator.plugins(返回一个数组，数组的对象有name等属性)
+
+### history
+
+这个对象保存着用户上网的历史记录。
+
+方法：
+
+* history.go(前进或退后页数的数字)
+* history.back():退后一页
+* history.forward():前进一页
+
+## DOM1
+
+
+
 ## ^_^未完待续，敬请期待！
