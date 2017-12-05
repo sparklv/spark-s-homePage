@@ -126,6 +126,69 @@ location是一个特别的对象，它既是window对象的属性，也是docume
 
 ## DOM1
 
+### 节点层次
 
+可以将任何HTML,XML文档描绘成一个由多层节点构成的结构。
+
+文档节点是每个文档的根节点，文档节点只有一个根节点,即`<html>`元素，也称为文档元素，任何文档只能有一个文档元素（包括XML）
+
+JS中所有节点类型都继承自Node类型，因此所有节点都共享着相同的基本属性和方法。
+
+#### 类型
+
+```javascript
+Node.ELEMENT_NODE(1)
+Node.ATTRIBUTE_NODE(2)
+Node.TEXT_NODE(3)
+Node.CDATA_SECTION_NODE(4)
+Node.ENTITY_REFERENCE_NODE(5)
+Node.ENTITY_NODE(6)
+Node.PROCESSING_INSTRUCTION_NODE(7)
+Node.COMMENT_NODE(8)
+Node.DOCUMENT_NODE(9)
+Node.DOCUMENT_TYPE_NODE(10)
+Node.DOCUMENT_FRAGMENT_NODE(11)
+Node.NOTATION_NODE(12)
+```
+
+可以使用nodeType属性获取类型，最好和数字比较，因为IE不兼容（没有公开node类型的构造函数）
+
+#### nodeName和nodeValue
+
+对于元素节点，nodeName为标签名，nodeValue是null
+
+#### 节点关系
+
+childNodes属性：保存着一个nodeList对象，是一个类数组对象，用于保存一组有序的节点。可以使用[]或item()访问
+
+parentNode属性：指向文档树的父节点
+
+previousSibling属性：前一个同辈节点，第一个节点为null
+
+nextSibling属性：下一个同辈节点，最后一个为null
+
+firstChild属性：指向第一个子节点，相当于childNodes[0]
+
+lastChild属性：指向最后一个子节点，相当于childNodes[childNodes.length - 1]
+
+hasChildNodeS()方法：在节点包含一个或着多个子节点的情况下返回true。
+
+ownerDocument属性：指向文档节点。
+
+#### 操作节点
+
+appendChild()：用于向childNodes结尾添加一个节点
+
+insertBefore()：接受两个参数，一是插入的节点，二是参照节点
+
+replaceChild()：接受两个参数，一个是插入的节点，二是被替换节点。返回替换节点
+
+removeChild()：接受一个参数，即被删除节点
+
+注意，一个文档不能有多个相同的节点，appendChild已存在节点，会变成移动节点
+
+cloneNode()：用于复制节点，如果参数是true会复制子节点
+
+normalize()：用于处理文本节点（不含文本和相邻文本节点）
 
 ## ^_^未完待续，敬请期待！
