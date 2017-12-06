@@ -191,4 +191,44 @@ cloneNode()：用于复制节点，如果参数是true会复制子节点
 
 normalize()：用于处理文本节点（不含文本和相邻文本节点）
 
+#### Document类型
+
+JS通过Document类型表示文档，document对象是HTMLDocument得一个实例，表示整个HTML页面。而且document对象是window对象得一个属性，因此可以将其作为全局对象来访问
+
+nodeType:9
+
+nodeName:#document
+
+nodeValue:null
+
+parentNode:null
+
+ownerDocument:null
+
+子节点可能是一个DocumentType（最多一个）、Element（最多一个）、ProcessingInstruction或Comment
+
+##### 文档子节点
+
+document属性
+
+documentElment属性：代表文档元素
+
+body属性：指向body元素
+
+doctype属性：代表DocumentType类型，即`<!DOCTYPE>`（注意兼容性）
+
+##### 文档信息
+
+document属性
+
+title属性：代表title元素之间的文本
+
+URL属性：包含页面完整的URL链接
+
+domain属性：包含页面的域名
+
+referrer属性：保存着链接到当前页面的那个页面的URL，没有的话为null
+
+以上属性只有domain可以重置，但是不能随意设置，如p2p.wrox.com只能重置为wrow.com，而且不能逆向。当domain相同，框架间就可以通信
+
 ## ^_^未完待续，敬请期待！
