@@ -231,4 +231,20 @@ referrer属性：保存着链接到当前页面的那个页面的URL，没有的
 
 以上属性只有domain可以重置，但是不能随意设置，如p2p.wrox.com只能重置为wrow.com，而且不能逆向。当domain相同，框架间就可以通信
 
+##### 查找元素
+
+* getElementById()方法：接受一个参数即要取得元素的id（区分大小写），但是ie8及以下不区分大小写。而且ie7及以下有一个怪癖，即name特性与给定id匹配的表单元素，也会被返回。
+
+* getElementsByTagName()方法：接受一个参数，即要取得元素的标签名，返回的是包含0个或多个元素的NodeList。要想取得文档所有元素，可以传入"*"。
+  * item()方法可以访问nodelist中的项。当然，使用[]也可以访问
+  * namedItem()方法可以通过name特性取得nodeList集合中的项同样可以使用[]传入字符串访问name特性项
+* getElementsByName()方法：可以获取所有name特性的元素。
+
+##### 特殊集合
+
+document.anchors:包含文档中所有带name特性的a元素
+document.forms:包含文档中所有的form元素
+document.images:包含文档中所有的img元素
+document.link:包含文档中所有带href特性的a元素
+
 ## ^_^未完待续，敬请期待！
