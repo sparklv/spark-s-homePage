@@ -177,33 +177,23 @@ ownerDocument属性：指向文档节点。
 
 #### 操作节点
 
-appendChild()：用于向childNodes结尾添加一个节点
-
-insertBefore()：接受两个参数，一是插入的节点，二是参照节点
-
-replaceChild()：接受两个参数，一个是插入的节点，二是被替换节点。返回替换节点
-
-removeChild()：接受一个参数，即被删除节点
-
-注意，一个文档不能有多个相同的节点，appendChild已存在节点，会变成移动节点
-
-cloneNode()：用于复制节点，如果参数是true会复制子节点
-
-normalize()：用于处理文本节点（不含文本和相邻文本节点）
+* appendChild()：用于向childNodes结尾添加一个节点
+* insertBefore()：接受两个参数，一是插入的节点，二是参照节点
+* replaceChild()：接受两个参数，一个是插入的节点，二是被替换节点。返回替换节点
+* removeChild()：接受一个参数，即被删除节点
+  * 注意，一个文档不能有多个相同的节点，appendChild已存在节点，会变成移动节点
+* cloneNode()：用于复制节点，如果参数是true会复制子节点
+* normalize()：用于处理文本节点（不含文本和相邻文本节点）
 
 #### Document类型
 
 JS通过Document类型表示文档，document对象是HTMLDocument得一个实例，表示整个HTML页面。而且document对象是window对象得一个属性，因此可以将其作为全局对象来访问
 
-nodeType:9
-
-nodeName:#document
-
-nodeValue:null
-
-parentNode:null
-
-ownerDocument:null
+* nodeType:9
+* nodeName:#document
+* nodeValue:null
+* parentNode:null
+* ownerDocument:null
 
 子节点可能是一个DocumentType（最多一个）、Element（最多一个）、ProcessingInstruction或Comment
 
@@ -211,23 +201,18 @@ ownerDocument:null
 
 document属性
 
-documentElment属性：代表文档元素
-
-body属性：指向body元素
-
-doctype属性：代表DocumentType类型，即`<!DOCTYPE>`（注意兼容性）
+* documentElment属性：代表文档元素
+* body属性：指向body元素
+* doctype属性：代表DocumentType类型，即`<!DOCTYPE>`（注意兼容性）
 
 ##### 文档信息
 
 document属性
 
-title属性：代表title元素之间的文本
-
-URL属性：包含页面完整的URL链接
-
-domain属性：包含页面的域名
-
-referrer属性：保存着链接到当前页面的那个页面的URL，没有的话为null
+* title属性：代表title元素之间的文本
+* URL属性：包含页面完整的URL链接
+* domain属性：包含页面的域名
+* referrer属性：保存着链接到当前页面的那个页面的URL，没有的话为null
 
 以上属性只有domain可以重置，但是不能随意设置，如p2p.wrox.com只能重置为wrow.com，而且不能逆向。当domain相同，框架间就可以通信
 
@@ -242,9 +227,41 @@ referrer属性：保存着链接到当前页面的那个页面的URL，没有的
 
 ##### 特殊集合
 
-document.anchors:包含文档中所有带name特性的a元素
-document.forms:包含文档中所有的form元素
-document.images:包含文档中所有的img元素
-document.link:包含文档中所有带href特性的a元素
+* document.anchors:包含文档中所有带name特性的a元素
+* document.forms:包含文档中所有的form元素
+* document.images:包含文档中所有的img元素
+* document.link:包含文档中所有带href特性的a元素
+
+###### 文档写入
+
+* write():接受一个字符串参数，即要写入到输出流中的文本。
+* writeln():接受一个字符串参数，即将要写入到输出流中的文本，在字符串末尾添加一个换行符(\n)。
+* open()和close()可以用于打开和关闭网页的输出流
+
+#### Element类型
+
+* nodeType:1
+* nodeName:标签名
+* nodeValue:null
+* parentNode:Document或者Element
+* 子节点可能是Element,Text,Comment,ProcessingInstruction,CDATASection或EntityReference
+
+也可以使用tagName属性获取标签名，返回的可能是一个大写的标签名字符串
+
+##### HTML元素
+
+所有HTML元素都由HTMLElement类型表示，不是直接通过这个类型也是通过这个类型更具体的子类型来表示。HTMLElement直接继承自Element并添加了一些属性，每个HTML元素都包含以下特性：
+
+* id
+* title
+* lang
+* dir
+* className
+
+##### 操作特性
+
+* getAttribute():接受一个字符串参数即特性名，返回特性值（包括自定义特性），形式为字符串
+* setAttribute():接受两个参数，一个是特性名，二是特性值（IE7兼容性有问题，尽量使用属性来设置特性）
+* removeAttribute():接受一个参数即要删除的特性（IE8之前不支持）
 
 ## ^_^未完待续，敬请期待！
