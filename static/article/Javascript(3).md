@@ -264,4 +264,8 @@ document属性
 * setAttribute():接受两个参数，一个是特性名，二是特性值（IE7兼容性有问题，尽量使用属性来设置特性）
 * removeAttribute():接受一个参数即要删除的特性（IE8之前不支持）
 
+##### attributes特性
+
+
+
 ## ^_^未完待续，敬请期待！
