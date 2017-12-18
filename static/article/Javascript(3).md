@@ -262,8 +262,35 @@ document属性
 
 * getAttribute():接受一个字符串参数即特性名，返回特性值（包括自定义特性），形式为字符串
 * setAttribute():接受两个参数，一个是特性名，二是特性值（IE7兼容性有问题，尽量使用属性来设置特性）
-* removeAttribute():接受一个参数即要删除的特性（IE8之前不支持）
+* removeAttribute():接受一个参数即要删除的特性（IE6之前不支持）
 
-##### attributes特性
+##### attributes属性
+
+Element类型是使用attributes属性的唯一一个DOM节点类型，包含一个NamedNodeMap，与NodeList类似。NameNodeMap对象拥有下列方法。
+
+* getNamedItem(name)：返回nodeName属性等于name的节点，也可以用attributes方括号语法来访问节点
+* removeNamedItem(name)：从列表中移除属性等于name的节点
+* setNamedItem(node)：从列表中添加节点，以节点的nodeName属性为索引
+* item(pos)：返回位于数字pos位置处的节点
+
+与getAtrribute方法的作用区别是，atrributes属性可以遍历元素的特性，另外ie7及以下表现会有所不同，即使没有写的属性也会遍历，可以使用attributes的specified属性来判断，未设置过的特性会返回false。
+
+##### 创建元素
+
+document.createElement()方法可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名，创建后可以设置元素的特性，添加子节点等操作。
+
+##### 元素子节点
+
+元素的childNodes属性中包含了它的所有字节点（注意节点间的文本节点），所以在操作的时候最好判断以下子节点的nodeType（如nodeType == 1）
+
+#### Text类型
+
+* nodeType:3
+* nodeName:'#text'
+* nodeValue:节点包含的文本
+* parentNode:某一个Element
+* 没有子节点
+
+##### 操作节点
 
 ## ^_^未完待续，敬请期待！
