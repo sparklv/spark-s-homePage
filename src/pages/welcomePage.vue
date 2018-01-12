@@ -27,7 +27,7 @@ export default {
     var btn = document.getElementById("into");
     var cxt = canvas.getContext("2d");
     var cWidth = document.documentElement.clientWidth;
-    var cHeight = document.documentElement.clientHeight - 5;
+    var cHeight = document.documentElement.clientHeight - 4;
     canvas.style.width = cWidth + "px";
     canvas.style.height = cHeight + "px";
     canvas.setAttribute("width", cWidth);
